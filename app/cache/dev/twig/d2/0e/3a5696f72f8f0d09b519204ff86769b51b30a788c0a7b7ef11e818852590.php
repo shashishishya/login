@@ -132,7 +132,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            <tr>
                                <th> NAME </th>
                                <th> MATCHES </th>
-                               <th> Scores </th>
+                               <th> POINTS </th>
                                <th> Add </th>
                            </tr>
                        </thead>
@@ -291,7 +291,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            <tr>
                                <th> NAME </th>
                                <th> MATCHES </th>
-                               <th> Scores </th>
+                               <th> POINTS </th>
                                <th> Add </th>
                            </tr>
                        </thead> 
