@@ -1,0 +1,139 @@
+<?php
+
+namespace Login\LoginBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Team
+ */
+class Team
+{
+    /**
+     * @var string
+     */
+    private $player1;
+
+    /**
+     * @var string
+     */
+    private $player2;
+
+    /**
+     * @var string
+     */
+    private $player3;
+
+    /**
+     * @var string
+     */
+    private $player4;
+
+    /**
+     * @var string
+     */
+    private $team;
+
+
+    /**
+     * Set player1
+     *
+     * @param string $player1
+     * @return Team
+     */
+    public function setPlayer1($player1)
+    {
+        $this->player1 = $player1;
+
+        return $this;
+    }
+
+    /**
+     * Get player1
+     *
+     * @return string 
+     */
+    public function getPlayer1()
+    {
+        return $this->player1;
+    }
+
+    /**
+     * Set player2
+     *
+     * @param string $player2
+     * @return Team
+     */
+    public function setPlayer2($player2)
+    {
+        $this->player2 = $player2;
+
+        return $this;
+    }
+
+    /**
+     * Get player2
+     *
+     * @return string 
+     */
+    public function getPlayer2()
+    {
+        return $this->player2;
+    }
+
+    /**
+     * Set player3
+     *
+     * @param string $player3
+     * @return Team
+     */
+    public function setPlayer3($player3)
+    {
+        $this->player3 = $player3;
+
+        return $this;
+    }
+
+    /**
+     * Get player3
+     *
+     * @return string 
+     */
+    public function getPlayer3()
+    {
+        return $this->player3;
+    }
+
+    /**
+     * Set player4
+     *
+     * @param string $player4
+     * @return Team
+     */
+    public function setPlayer4($player4)
+    {
+        $this->player4 = $player4;
+
+        return $this;
+    }
+
+    /**
+     * Get player4
+     *
+     * @return string 
+     */
+    public function getPlayer4()
+    {
+        return $this->player4;
+    }
+
+    /**
+     * Get team
+     *
+     * @return string 
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }
+}

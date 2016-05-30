@@ -1,0 +1,40 @@
+{%extends "LoginLoginBundle:Default:index.html.twig" %}
+{%block stylesheets %}
+
+{%endblock%}
+
+{%block container %}
+    <div class="container">
+        <div class="well">
+            <h2 id="heading"> <strong> Login page created  </strong></h2>
+        </div>
+
+        <div class="row" id="pwd-container">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">  
+                <section class="login-form">
+                    <form method="POST" action="{{path('login_login_homepage')}}" role="login">
+                        <input type="text" name="username" placeholder="Email" required class="form-control input-lg" value="joestudent@gmail.com" />
+
+                        <input type="password" class="form-control input-lg" name="password" id="password" placeholder="Password" required="" />
+
+
+                        <div class="pwstrength_viewport_progress"></div>
+
+
+                        <button type="submit"  name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+
+                    </form>
+                        
+                    <div class="form-links">
+                        <a href="#">www.website.com</a>
+                    </div>
+                </section>  
+            </div>
+                    {% if name is defined %}
+                        <div class="alert-info fade in">
+                            <strong>hello {{name}} </strong>
+                        </div>              
+                            {%endif%}
+        {%endblock%}

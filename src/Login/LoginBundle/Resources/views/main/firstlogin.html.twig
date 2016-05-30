@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <title> hello login </title>
+        <meta name="viewport" content="width-device-width", initial-scale="1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/bootstrap-theme.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/bootstrap-responsive.css')}}" rel="stylesheet">   
+        <link href="{{asset('bundles/loginlogin/css/sample.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/signup.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/Main.css')}}" rel="stylesheet">
+        <script src="{{asset('bundles/loginlogin/js/main.js')}}"></script>
+        <script src="{{asset('bundles/loginlogin/js/jquery-2.2.4.min.js')}}"></script>
+        <script>
+            var addedrows = new Array();
+            $(document).ready(function() {
+                $( "#sourcetable tbody tr" ).on( "click", function( event ) {
+
+                var ok = 0;
+                var theid = $( this ).attr('id').replace("sour","");    
+
+                var newaddedrows = new Array();
+
+                for (index = 0; index < addedrows.length; ++index) {
+
+                    // if already selected then remove
+                    if (addedrows[index] == theid) {
+
+                        $( this ).css( "background-color", "#ffccff" );
+
+                        // remove from second table :
+                        var tr = $( "#dest" + theid );
+                        tr.css("background-color","#FF3700");
+                        tr.fadeOut(400, function(){
+                            tr.remove();
+                        });
+
+                        //addedrows.splice(theid, 1);   
+
+                        //the boolean
+                        ok = 1;
+                    } else {
+
+                        newaddedrows.push(addedrows[index]);
+                    } 
+                }   
+
+                addedrows = newaddedrows;
+
+                // if no match found then add the row :
+                if (!ok) {
+                    // retrieve the id of the element to match the id of the new row :
+
+
+                    addedrows.push( theid);
+
+                    $( this ).css( "background-color", "#cacaca" );
+
+                    $('#destinationtable tr:last').after('<tr id="dest' + theid + '"><td>'
+                                                   + $(this).find("td").eq(0).html() + '</td><td>'
+                                                   + $(this).find("td").eq(1).html() + '</td><td>'
+                                                   + $(this).find("td").eq(2).html() + '</td><td>'
+                                                   + $(this).find("td").eq(3).html() + '</td></tr>');         
+
+                }
+
+
+                });
+            });
+            </script>
+    </head>
+    <body>
+        {% block container %}
+            <div class="container">
+                <div class="well">
+                    <h2 id="heading"> <strong> Welcome for user created  </strong></h2>
+                </div>
+            </div>
+          {% if name is defined %}
+            <h4> hello {{ name }}</h4>
+            {%endif%}
+            
+                <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Website Name </a>
+                    </div>
+                 <ul class="nav navbar-nav">
+                    <li><a href="#">HoMe </a></li>
+                    <li><a href="#"> Scores </a></li>
+                    <li><a href="#"> Status </a></li>
+                    <li><a href="#"> Upcomming </a></li>
+                    <li class="active"><a href="#"> League </a></li>
+                    <li><a href="#"> Abount </a></li>
+                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{path('login_login_main')}}"><span class="glyphicon glyphicon-user"></span>Logout</a></li>
+                    </ul>
+            </div>
+            </nav>
+           {%endblock%}
+        <div class="row">
+            <div class="col-lg-4">
+                <p id="listplayer"><h4><b> LIST OF THE PLAYERS IN TEAM </b></h4></p>
+                   <table class="table table-bordered" id="sourcetable">
+                       <thead class="tthead">
+                           <tr>
+                               <th> NAME </th>
+                               <th> MATCHES </th>
+                               <th> Scores </th>
+                               <th> Add </th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           {% if player is defined %}
+                           <tr class="success" id="sour0">
+                               <td>{{ player[0].player1 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="warning" id="sour1">
+                               <td>{{ player[0].player2 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="info" id="sour2">
+                               <td>{{ player[0].player3 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="warning" id="sour3">
+                               <td>{{ player[0].player4 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="success" id="sour4">
+                               <td>{{ player[0].player5 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="warning" id="sour5">
+                               <td>{{ player[0].player6 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="info">
+                               <td>{{ player[0].player7 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="warning">
+                               <td>{{ player[0].player8 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                           <tr class="success">
+                               <td>{{ player[0].player9 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="warning">
+                               <td>{{ player[0].player10 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="info">
+                               <td>{{ player[0].player11 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="warning">
+                               <td>{{ player[0].player12 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                           <tr class="success">
+                               <td>{{ player[0].player13 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="warning">
+                               <td>{{ player[0].player14 }}</td>
+                               <td> 23 </td>
+                               <td> 1000 </td>
+                               <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
+                           </tr>
+                            <tr class="info">
+                               <td>{{ player[0].player15 }}</td>
+                               <td> 23 </td>
+                               <td> <button type="button" class="use-address" /> </td>
+                               <td><span class="glyphicon glyphicon-plus" aria-hidden="true" id="loginLink" onclick="toggleTable();"></span></td>
+                           </tr>
+                           {% endif %}
+                       </tbody>
+                   </table>     
+            </div>
+
+            <div class="col-lg-4">
+                <p id="listplayer"><h4><b> SELECTED PLAYERS </b></h4></p>
+                <form method="POST" action="">
+                <table class="table table-bordered" id="destinationtable">
+                       <thead class="tthead">
+                           <tr>
+                               <th> NAME </th>
+                               <th> MATCHES </th>
+                               <th> Scores </th>
+                               <th> Add </th>
+                           </tr>
+                       </thead> 
+                </table>
+                </form> 
+            </div>
+            <div class="col-lg-4"><strong>SELECT THE TEAMS </strong>
+                </br>
+                </br>
+                       <div class="container">
+                           <span id="rcb" value="rcb" name="rcb"><a href="{{path('login_login_main')}}#rcb">RCB</a></span>
+                       </div>
+                       <div class="container">
+                           <span><a href="{{path('login_login_main')}}">PUNE</a></span>
+                       </div>
+                       <div class="container">
+                           <span><a href="{{path('login_login_main')}}">PUNJAB</a></span>
+                       </div>
+                       <div class="container">
+                           <span><a href="{{path('login_login_main')}}">MUMBAI</a></span>
+                       </div>
+                       <div class="container">
+                           <span><a href="{{path('login_login_main')}}">KOLKATTA</a></span>
+                       </div>
+                       <div class="container">
+                           <span><a href="{{path('login_login_main')}}">GUJRATH</a></span>
+                       </div>
+                       <div class="container">
+                           <span><a href="{{path('login_login_main')}}">DELHI</a></span>
+                       </div>
+                       <div class="container">
+                           <span><a href="{{path('login_login_main')}}">Hydrabad</a></span>
+                       </div>
+                       <div class="container-fluid">
+                            <div class="row-fluid">
+                              <div class="span2">
+                                <!--Sidebar content-->
+                              </div>
+                              <div class="span10">
+                                <!--Body content-->
+                              </div>
+                            </div>
+                       </div>
+            </div>
+        </div>
+    </body>
+</html>

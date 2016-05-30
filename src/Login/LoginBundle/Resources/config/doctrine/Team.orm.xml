@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Login\LoginBundle\Entity\Team" table="team">
+    <id name="team" type="string" column="team" length="255">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="player1" type="string" column="player1" length="255" nullable="false"/>
+    <field name="player2" type="string" column="player2" length="255" nullable="false"/>
+    <field name="player3" type="string" column="player3" length="255" nullable="false"/>
+    <field name="player4" type="string" column="player4" length="255" nullable="false"/>
+    <field name="player5" type="string" column="player5" length="60" nullable="true"/>
+    <field name="player6" type="string" column="player6" length="60" nullable="true"/>
+    <field name="player7" type="string" column="player7" length="60" nullable="true"/>
+    <field name="player8" type="string" column="player8" length="60" nullable="true"/>
+    <field name="player9" type="string" column="player9" length="60" nullable="true"/>
+    <field name="player10" type="string" column="player10" length="60" nullable="true"/>
+    <field name="player11" type="string" column="player11" length="60" nullable="true"/>
+    <field name="player12" type="string" column="player12" length="60" nullable="true"/>
+    <field name="player13" type="string" column="player13" length="60" nullable="true"/>
+    <field name="player14" type="string" column="player14" length="60" nullable="true"/>
+    <field name="player15" type="string" column="player15" length="60" nullable="true"/>
+  </entity>
+</doctrine-mapping>

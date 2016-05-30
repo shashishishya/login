@@ -23,7 +23,7 @@ class DefaultController extends Controller
         //echo "value of the username $user";
         //$user=1;
         if($user){
-            return $this->render('LoginLoginBundle:Default:login.html.twig', array('name' => $user->getFirstName()));
+            return $this->render('LoginLoginBundle:main:firstlogin.html.twig', array('name' => $user->getFirstName()));
         }
         }
       

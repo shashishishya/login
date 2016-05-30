@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <title> hello login </title>
+        <meta name="viewport" content="width-device-width", initial-scale="1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/bootstrap-responsive.css')}}" rel="stylesheet">   
+        <link href="{{asset('bundles/loginlogin/css/sample.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/signup.css')}}" rel="stylesheet">
+        <script src="{{asset('bundles/loginlogin/js/signup.js')}}"></script>
+             {%block stylesheets %}
+    
+              {%endblock%}
+    </head>
+    <body>
+{%block container %}
+    <div class="container">
+        <div class="well">
+            <h2 id="heading"> <strong> Signup page created  </strong></h2>
+        </div>
+        <div class="row" id="pwd-container">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">  
+                <section class="login-form">
+                    <form method="POST" action="{{path('login_login_signup')}}" onSubmit="return formValidation();" name="sigup">
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">FIRST NAME </label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" name="firstname" id="firstname" class="form-control" placeholder=" ENTER THE FIRST NAME" />
+                                    <br>
+                                </div>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">LAST NAME </label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" id="lastname" name="lastname" class="form-control" placeholder=" ENTER THE LAST NAME" />
+                                </div>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname" class="col-sm-2 control-label">Email address </label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="email" name="email" class="form-control" placeholder=" ENTER THE EMAIL ADDRESS" />
+                                </div>
+                                </br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label">USER NAME </label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" name="username" class="form-control" placeholder=" ENTER THE USERNAME" />
+                                </div>
+                                </br>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label"> PASS WORD  </label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" name="password" class="form-control" placeholder=" ENTER THE PASSWORD" />
+                                </div>
+                                </br>
+                            </div>
+                        </div>
+                        
+                         <div class="form-group">
+                            <label for="confirm_password" class="col-sm-2 control-label">Confirm password </label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" name="confirm_password" class="form-control" placeholder="Confirm password" />
+                                </div>
+                                </br>
+                            </div>
+                        </div>
+                        
+
+                        <div class="pwstrength_viewport_progress"></div>
+                        <br>
+
+                        <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign Up</button>
+                       
+                    </form>
+
+                    <div class="form-links">
+                        <a href="#">www.website.com</a>
+                    </div>
+                </section>  
+            </div>
+        {%endblock%}
+           </body>
+</html>s

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Login\LoginBundle\Entity\Rcb" table="rcb">
+    <id name="rcb" type="string" column="rcb" length="25">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="player1" type="string" column="player 1" length="255" nullable="false"/>
+    <field name="player2" type="string" column="player 2" length="255" nullable="false"/>
+    <field name="player3" type="string" column="player 3" length="255" nullable="false"/>
+    <field name="player4" type="string" column="player 4" length="255" nullable="false"/>
+    <field name="player5" type="string" column="player 5" length="255" nullable="false"/>
+    <field name="player6" type="string" column="player 6" length="255" nullable="false"/>
+    <field name="player7" type="string" column="player 7" length="255" nullable="false"/>
+    <field name="player8" type="string" column="player 8" length="255" nullable="false"/>
+    <field name="player9" type="string" column="player 9" length="255" nullable="false"/>
+    <field name="player10" type="string" column="player 10" length="255" nullable="false"/>
+    <field name="player11" type="string" column="player 11" length="255" nullable="false"/>
+    <field name="player12" type="string" column="player 12" length="255" nullable="false"/>
+    <field name="player13" type="string" column="player 13" length="255" nullable="false"/>
+    <field name="player14" type="string" column="player 14" length="255" nullable="false"/>
+    <field name="player15" type="string" column="player 15" length="255" nullable="false"/>
+    <field name="player16" type="string" column="player 16" length="255" nullable="false"/>
+    <field name="player17" type="string" column="player 17" length="255" nullable="false"/>
+    <field name="player18" type="string" column="player 18" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>
