@@ -22,29 +22,24 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
     <head>
         <meta charset=\"utf-8\">
         <title> Home Page </title>
-        <meta name=\"viewport\" content=\"width-device-width\", initial-scale=\"1.0\">
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"\">
         <link href=\"";
-        // line 9
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/bootstrap.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+        echo "\" rel=\"stylesheet\">  
         <link href=\"";
-        // line 10
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/bootstrap-responsive.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">   
-        <link href=\"";
-        // line 11
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/sample.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
-        // line 12
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/home.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
              ";
-        // line 13
+        // line 11
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 14
         echo "    </head>
     <body>
     <div class=\"container\">
@@ -67,11 +62,11 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
                 </ul>
                     <ul class=\"nav navbar-nav navbar-right\">
                         <li><a href=\"";
-        // line 37
+        // line 35
         echo $this->env->getExtension('routing')->getPath("login_login_signup");
         echo "\"><span class=\"glyphicon glyphicon-user\"></span>Sign Up </a></li>
                         <li><a href=\"";
-        // line 38
+        // line 36
         echo $this->env->getExtension('routing')->getPath("login_login_homepage");
         echo "\"><span class=\"glyphicon glyphicon-log-in\"></span> LOgin </a></li>
                     </ul>
@@ -80,97 +75,98 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
                     <div class=\"row\">
                         <div class=\"col-lg-3\">
                             ";
-        // line 44
-        if (array_key_exists("name", $context)) {
-            // line 45
+        // line 42
+        if (array_key_exists("first", $context)) {
+            // line 43
             echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "firstTeam"), "html", null, true);
             echo "</span>
                             </br>
                             </br>
                             <span id=\"title\">";
-            // line 48
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 46
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
+        // line 47
+        echo "        
+                        </div>
+                        <div class=\"col-lg-3\">
+                            ";
         // line 50
-        echo "                        </div>
-                        <div class=\"col-lg-3\">
-                            ";
-        // line 52
-        if (array_key_exists("name", $context)) {
-            // line 53
+        if (array_key_exists("second", $context)) {
+            // line 51
             echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "firstTeam"), "html", null, true);
             echo "</span>
                                 </br>
                                 </br>
                                 <span id=\"title\">";
-            // line 56
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 54
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
+        // line 56
+        echo "                        </div>
+                        <div class=\"col-lg-3\">
+                            ";
         // line 58
-        echo "                        </div>
-                        <div class=\"col-lg-3\">
-                            ";
-        // line 60
-        if (array_key_exists("name", $context)) {
-            // line 61
+        if (array_key_exists("third", $context)) {
+            // line 59
             echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "firstTeam"), "html", null, true);
             echo "</span>
                                 </br>
                                 </br>
                                 <span id=\"title\">";
-            // line 64
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 62
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 66
+        // line 64
         echo "                            </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 68
-        if (array_key_exists("name", $context)) {
-            // line 69
+        // line 66
+        if (array_key_exists("fourth", $context)) {
+            // line 67
             echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "firstTeam"), "html", null, true);
             echo "</span>
                                 </br>
                                 </br>
                                 <span id=\"title\">";
-            // line 72
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 70
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "secondTeam"), "html", null, true);
             echo " </span>
                             ";
         }
-        // line 74
+        // line 72
         echo "                            </div>
                     </div>
                      ";
-        // line 76
+        // line 74
         if (array_key_exists("name", $context)) {
-            // line 77
+            // line 75
             echo "                        <div class=\"alert-info fade in\">
                             
                         </div>              
                      ";
         }
-        // line 81
+        // line 79
         echo "                            
     </body>
 </html>
     ";
     }
 
-    // line 13
+    // line 11
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 14
+        // line 12
         echo "    
               ";
     }
@@ -187,6 +183,6 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
 
     public function getDebugInfo()
     {
-        return array (  174 => 14,  171 => 13,  164 => 81,  158 => 77,  156 => 76,  152 => 74,  147 => 72,  140 => 69,  138 => 68,  134 => 66,  129 => 64,  122 => 61,  120 => 60,  116 => 58,  111 => 56,  104 => 53,  102 => 52,  98 => 50,  93 => 48,  86 => 45,  84 => 44,  75 => 38,  71 => 37,  48 => 16,  46 => 13,  42 => 12,  38 => 11,  34 => 10,  30 => 9,  20 => 1,);
+        return array (  170 => 12,  167 => 11,  160 => 79,  154 => 75,  152 => 74,  148 => 72,  143 => 70,  136 => 67,  134 => 66,  130 => 64,  125 => 62,  118 => 59,  116 => 58,  112 => 56,  107 => 54,  100 => 51,  98 => 50,  93 => 47,  88 => 46,  81 => 43,  79 => 42,  70 => 36,  66 => 35,  43 => 14,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }

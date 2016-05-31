@@ -80,4 +80,45 @@ class Matches
     {
         return $this->id;
     }
+    /**
+     * @var string
+     */
+    private $match;
+
+
+    /**
+     * Set match
+     *
+     * @param string $match
+     * @return Matches
+     */
+    public function setMatch($match)
+    {
+        $this->match = $match;
+
+        return $this;
+    }
+
+    /**
+     * Get match
+     *
+     * @return string 
+     */
+    public function getMatch()
+    {
+        return $this->match;
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Matches
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 }

@@ -393,11 +393,17 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                         <a class=\"navbar-brand\" href=\"#\">Website Name </a>
                     </div>
                  <ul class=\"nav navbar-nav\">
-                    <li><a href=\"#\">HoMe </a></li>
+                    <li class=\"active\"><a href=\"";
+        // line 92
+        echo $this->env->getExtension('routing')->getPath("login_login_home");
+        echo "\">HoMe </a></li>
                     <li><a href=\"#\"> Scores </a></li>
                     <li><a href=\"#\"> Status </a></li>
                     <li><a href=\"#\"> Upcomming </a></li>
-                    <li class=\"active\"><a href=\"#\"> League </a></li>
+                    <li><a href=\"";
+        // line 96
+        echo $this->env->getExtension('routing')->getPath("login_login_main");
+        echo "\"> League </a></li>
                     <li><a href=\"#\"> Abount </a></li>
                 </ul>
                     <ul class=\"nav navbar-nav navbar-right\">
@@ -423,6 +429,6 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
 
     public function getDebugInfo()
     {
-        return array (  406 => 100,  389 => 85,  383 => 83,  381 => 82,  374 => 77,  371 => 76,  342 => 254,  336 => 251,  330 => 248,  324 => 245,  318 => 242,  312 => 239,  306 => 236,  300 => 233,  275 => 210,  266 => 204,  257 => 198,  248 => 192,  239 => 186,  230 => 180,  221 => 174,  212 => 168,  203 => 162,  194 => 156,  185 => 150,  176 => 144,  167 => 138,  158 => 132,  149 => 126,  140 => 120,  137 => 119,  135 => 118,  120 => 105,  118 => 76,  53 => 14,  49 => 13,  45 => 12,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
+        return array (  412 => 100,  405 => 96,  398 => 92,  389 => 85,  383 => 83,  381 => 82,  374 => 77,  371 => 76,  342 => 254,  336 => 251,  330 => 248,  324 => 245,  318 => 242,  312 => 239,  306 => 236,  300 => 233,  275 => 210,  266 => 204,  257 => 198,  248 => 192,  239 => 186,  230 => 180,  221 => 174,  212 => 168,  203 => 162,  194 => 156,  185 => 150,  176 => 144,  167 => 138,  158 => 132,  149 => 126,  140 => 120,  137 => 119,  135 => 118,  120 => 105,  118 => 76,  53 => 14,  49 => 13,  45 => 12,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }
