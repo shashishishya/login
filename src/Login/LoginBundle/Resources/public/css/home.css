@@ -91,7 +91,8 @@ row1{
                     font-size: 25px;
                     margin-left: 12%;
                 }
-                #round{
-                        border-radius: 50%;
+                #bat_table{
+                     width: 80%;
+                     margin-top: 10%;
                 }
 

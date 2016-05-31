@@ -5,7 +5,8 @@
         <title> Home Page </title>
         <meta name="description" content="">
         <meta name="author" content="">
-        <link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">  
+        <link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/loginlogin/css/bootstrap.min.css')}}" rel="stylesheet"> 
         <link href="{{asset('bundles/loginlogin/css/sample.css')}}" rel="stylesheet">
         <link href="{{asset('bundles/loginlogin/css/home.css')}}" rel="stylesheet">
         <style>
@@ -16,6 +17,11 @@
             width: 50%;
             border-radius: 50%;
             min-height:100%
+        }
+        #bat_table{
+            width: 80%;
+            margin-top: 13%;
+            border-radius: 10px;
         }
         </style>
 
@@ -142,17 +148,71 @@ function LeadingZero(Time){
                                     <div class="round">
                                     <img src="{{asset('bundles/loginlogin/images/virat-kohli-967.png')}}">
                                     </div>
+                                    <div class="table table-responsive">
+                                    <table class="table" id="bat_table">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <p id="best">BEST BOWLER </p>
                                     <div class="round">
                                     <img src="{{asset('bundles/loginlogin/images/vinaykumar.jpg')}}"> 
+                                   <div class="table table-responsive">
+                                    <table class="table" id="bat_table">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <p id="best">BEST ALROUDER </p>
                                     <div class="round">
                                     <img src="{{asset('bundles/loginlogin/images/ab-de-villiers-sa.png')}}">
+                                   <div class="table table-responsive">
+                                    <table class="table" id="bat_table">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
