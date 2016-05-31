@@ -36,14 +36,6 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/home.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-        <link rel=\"stylesheet\" href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/reset.css"), "html", null, true);
-        echo "\" />
-        <link rel=\"stylesheet\" href=\"";
-        // line 12
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/styles.css"), "html", null, true);
-        echo "\" />
 
 <!--[if lt IE 9]>
 \t\t<script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>
@@ -51,137 +43,56 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
 
 <!-- JS -->
 <script src=\"http://code.jquery.com/jquery-latest.js\"></script>
-<link rel=\"stylesheet\" href=\"";
-        // line 20
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/js/countdown.js"), "html", null, true);
-        echo "\" />
-<script>
-\t\t\$(document).ready(function(){
-\t\t\t\$(\"#countdown\").countdown({
-\t\t\t\tdate: \"01 june 2016 12:00:00\",
-\t\t\t\tformat: \"on\"
-\t\t\t},
-\t\t\t
-\t\t\tfunction() {
-\t\t\t\t// callback function
-\t\t\t});
-\t\t});
+<script >
+
+// JavaScript Document
+var Timer;
+var TotalSeconds;
+
+function CreateTimer(TimerID, Time){
+    var oop=this;
+\tthis.Timer = document.getElementById(TimerID);
+\tthis.TotalSeconds = Time;
+\tthis.update();
+\toop.to=setTimeout(function(){ oop.tick(); }, 1000);
+}
+
+CreateTimer.prototype={
+
+ tick:function(){
+    var oop=this;
+\tif (this.TotalSeconds <= 0){
+\t\treturn;
+\t}
+\tthis.TotalSeconds -= 1;
+\tthis.update()
+\toop.to=setTimeout(function(){ oop.tick(); }, 1000);
+ },
+
+ update:function(){
+ \tvar Seconds = this.TotalSeconds,Days = Math.floor(Seconds / 86400);
+\tSeconds -= Days * 86400;
+\tvar Hours = Math.floor(Seconds / 3600);
+\tSeconds -= Hours * (3600);
+\tvar Minutes = Math.floor(Seconds / 60);
+\tSeconds -= Minutes * (60);
+\tvar TimeStr = ((Days > 0) ? Days + \" days \" : \"\") +
+\tLeadingZero(Hours) + \":\" + LeadingZero(Minutes) + \":\" + LeadingZero(Seconds)
+\tthis.Timer.innerHTML = TimeStr;
+ }
+
+}
+
+
+function LeadingZero(Time){
+\treturn (Time < 10) ? \"0\" + Time : + Time;
+}
+
 </script>
-<script>
-                \$(document).ready(function(){
-\t\t\t\$(\"#countdown1\").countdown({
-\t\t\t\tdate: \"17 june 2016 12:00:00\",
-\t\t\t\tformat: \"on\"
-\t\t\t},
-\t\t\t
-\t\t\tfunction() {
-\t\t\t\t// callback function
-\t\t\t});
-\t\t});
-</script>
-<script>
-                \$(document).ready(function(){
-\t\t\t\$(\"#countdown2\").countdown({
-\t\t\t\tdate: \"17 july 2016 12:00:00\",
-\t\t\t\tformat: \"on\"
-\t\t\t},
-\t\t\t
-\t\t\tfunction() {
-\t\t\t\t// callback function
-\t\t\t});
-\t\t});
-</script>
-<script>
-                \$(document).ready(function(){
-\t\t\t\$(\"#countdown3\").countdown({
-\t\t\t\tdate: \"17 june 2016 12:00:00\",
-\t\t\t\tformat: \"on\"
-\t\t\t},
-\t\t\t
-\t\t\tfunction() {
-\t\t\t\t// callback function
-\t\t\t});
-\t\t});
-\t</script>
-        <script>
-                        (function(\$) {
-                        \$.fn.countdown = function(options, callback) {
-
-                                //custom 'this' selector
-                                thisEl = \$(this);
-
-                                //array of custom settings
-                                var settings = { 
-                                        'date': null,
-                                        'format': null
-                                };
-
-                                //append the settings array to options
-                                if(options) {
-                                        \$.extend(settings, options);
-                                }
-
-                                //main countdown function
-                                function countdown_proc() {
-
-                                        eventDate = Date.parse(settings['date']) / 1000;
-                                        currentDate = Math.floor(\$.now() / 1000);
-
-                                        if(eventDate <= currentDate) {
-                                                callback.call(this);
-                                                clearInterval(interval);
-                                        }
-
-                                        seconds = eventDate - currentDate;
-
-                                        days = Math.floor(seconds / (60 * 60 * 24)); //calculate the number of days
-                                        seconds -= days * 60 * 60 * 24; //update the seconds variable with no. of days removed
-
-                                        hours = Math.floor(seconds / (60 * 60));
-                                        seconds -= hours * 60 * 60; //update the seconds variable with no. of hours removed
-
-                                        minutes = Math.floor(seconds / 60);
-                                        seconds -= minutes * 60; //update the seconds variable with no. of minutes removed
-
-                                        //conditional Ss
-                                        if (days == 1) { thisEl.find(\".timeRefDays\").text(\"day\"); } else { thisEl.find(\".timeRefDays\").text(\"days\"); }
-                                        if (hours == 1) { thisEl.find(\".timeRefHours\").text(\"hour\"); } else { thisEl.find(\".timeRefHours\").text(\"hours\"); }
-                                        if (minutes == 1) { thisEl.find(\".timeRefMinutes\").text(\"minute\"); } else { thisEl.find(\".timeRefMinutes\").text(\"minutes\"); }
-                                        if (seconds == 1) { thisEl.find(\".timeRefSeconds\").text(\"second\"); } else { thisEl.find(\".timeRefSeconds\").text(\"seconds\"); }
-
-                                        //logic for the two_digits ON setting
-                                        if(settings['format'] == \"on\") {
-                                                days = (String(days).length >= 2) ? days : \"0\" + days;
-                                                hours = (String(hours).length >= 2) ? hours : \"0\" + hours;
-                                                minutes = (String(minutes).length >= 2) ? minutes : \"0\" + minutes;
-                                                seconds = (String(seconds).length >= 2) ? seconds : \"0\" + seconds;
-                                        }
-
-                                        //update the countdown's html values.
-                                        if(!isNaN(eventDate)) {
-                                                thisEl.find(\".days\").text(days);
-                                                thisEl.find(\".hours\").text(hours);
-                                                thisEl.find(\".minutes\").text(minutes);
-                                                thisEl.find(\".seconds\").text(seconds);
-                                        } else { 
-                                                alert(\"Invalid date. Here's an example: 12 Tuesday 2012 17:30:00\");
-                                                clearInterval(interval); 
-                                        }
-                                }
-
-                                //run the function
-                                countdown_proc();
-
-                                //loop the function
-                                interval = setInterval(countdown_proc, 1000);
-
-                        }
-                }) (jQuery);
-                </script>
              ";
-        // line 144
+        // line 64
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 147
+        // line 67
         echo "    </head>
     <body>
     <div class=\"container\">
@@ -204,11 +115,11 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
                 </ul>
                     <ul class=\"nav navbar-nav navbar-right\">
                         <li><a href=\"";
-        // line 168
+        // line 88
         echo $this->env->getExtension('routing')->getPath("login_login_signup");
         echo "\"><span class=\"glyphicon glyphicon-user\"></span>Sign Up </a></li>
                         <li><a href=\"";
-        // line 169
+        // line 89
         echo $this->env->getExtension('routing')->getPath("login_login_homepage");
         echo "\"><span class=\"glyphicon glyphicon-log-in\"></span> LOgin </a></li>
                     </ul>
@@ -217,127 +128,106 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
                     <div class=\"row\">
                         <div class=\"col-lg-3\">
                             ";
-        // line 175
+        // line 95
         if (array_key_exists("first", $context)) {
-            // line 176
-            echo "                                <span id=\"title\">";
+            // line 96
+            echo "                            <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "firstTeam"), "html", null, true);
-            echo "</span>
-                            </br>
-                            </br>
+            echo "</span><p>
+                            <strong><p id='between'>V/S</p></strong>
                             <span id=\"title\">";
-            // line 179
+            // line 98
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 180
+        // line 99
         echo "     
-                            <ul id=\"countdown\">
-                            <li> <span class=\"days\">00</span>
-                            </li>
-                            <li> <span class=\"hours\">00</span>
-                            </li>
-                            <li> <span class=\"minutes\">00</span>
-                            </li>
-                            <li> <span class=\"seconds\">00</span>
-                            </li>
-                            </ul>
-                        </div>
+                            <strong><p id='timer1'></p></strong>
+                            </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 193
+        // line 103
         if (array_key_exists("second", $context)) {
-            // line 194
+            // line 104
             echo "                                <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "firstTeam"), "html", null, true);
             echo "</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 197
+            // line 106
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 199
-        echo "                            <ul id=\"countdown1\">
-                            <li> <span class=\"days\">00</span>
-                            </li>
-                            <li> <span class=\"hours\">00</span>
-                            </li>
-                            <li> <span class=\"minutes\">00</span>
-                            </li>
-                            <li> <span class=\"seconds\">00</span>
-                            </li>
-                            </ul>
+        // line 108
+        echo "                            <strong><p id='timer2'></p></strong>
                         </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 211
+        // line 111
         if (array_key_exists("third", $context)) {
-            // line 212
+            // line 112
             echo "                                <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "firstTeam"), "html", null, true);
             echo "</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 215
+            // line 114
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 217
-        echo "                            <ul id=\"countdown2\">
-                            <li> <span class=\"days\">00</span>
-                            </li>
-                            <li> <span class=\"hours\">00</span>
-                            </li>
-                            <li> <span class=\"minutes\">00</span>
-                            </li>
-                            <li> <span class=\"seconds\">00</span>
-                            </li>
-                            </ul>
+        // line 116
+        echo "                            <strong><p id='timer3'></p></strong>
                             </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 229
+        // line 119
         if (array_key_exists("fourth", $context)) {
-            // line 230
+            // line 120
             echo "                                <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "firstTeam"), "html", null, true);
             echo "</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 233
+            // line 122
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "secondTeam"), "html", null, true);
             echo " </span>
                             ";
         }
-        // line 235
-        echo "                            <ul id=\"countdown3\">
-                            <li> <span class=\"days\">00</span>
-                            </li>
-                            <li> <span class=\"hours\">00</span>
-                            </li>
-                            <li> <span class=\"minutes\">00</span>
-                            </li>
-                            <li> <span class=\"seconds\">00</span>
-                            </li>
-                            </ul>
+        // line 124
+        echo "                            <strong><p id='timer4'></p></strong>
                             </div>
                     </div>
+                            </br>
+                            </br>
+                            <div class=\"row1\">
+                                <div class=\"col-lg-4\">
+                                    <p id=\"best\">BEST BATSMAN </p>
+                                </div>
+                                <div class=\"col-lg-4\">
+                                    <p id=\"best\">BEST BOWLER </p>
+                                </div>
+                                <div class=\"col-lg-4\">
+                                    <p id=\"best\">BEST ALROUDER </p>
+                                </div>
+                            </div>
+                            <script type=\"text/javascript\">
+                                new CreateTimer(\"timer1\", 30000);
+                                new CreateTimer(\"timer2\", 30000);
+                                new CreateTimer(\"timer3\", 30000);
+                                new CreateTimer(\"timer4\", 30000);
+                            </script>
     </body>
 </html>
     ";
     }
 
-    // line 144
+    // line 64
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 145
+        // line 65
         echo "    
               ";
     }
@@ -354,6 +244,6 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
 
     public function getDebugInfo()
     {
-        return array (  341 => 145,  338 => 144,  320 => 235,  315 => 233,  308 => 230,  306 => 229,  292 => 217,  287 => 215,  280 => 212,  278 => 211,  264 => 199,  259 => 197,  252 => 194,  250 => 193,  235 => 180,  230 => 179,  223 => 176,  221 => 175,  212 => 169,  208 => 168,  185 => 147,  183 => 144,  56 => 20,  45 => 12,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
+        return array (  231 => 65,  228 => 64,  200 => 124,  195 => 122,  189 => 120,  187 => 119,  182 => 116,  177 => 114,  171 => 112,  169 => 111,  164 => 108,  159 => 106,  153 => 104,  151 => 103,  145 => 99,  140 => 98,  134 => 96,  132 => 95,  123 => 89,  119 => 88,  96 => 67,  94 => 64,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }

@@ -8,8 +8,6 @@
         <link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">  
         <link href="{{asset('bundles/loginlogin/css/sample.css')}}" rel="stylesheet">
         <link href="{{asset('bundles/loginlogin/css/home.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="{{asset('bundles/loginlogin/css/reset.css')}}" />
-        <link rel="stylesheet" href="{{asset('bundles/loginlogin/css/styles.css')}}" />
 
 <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,130 +15,52 @@
 
 <!-- JS -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="{{asset('bundles/loginlogin/js/countdown.js')}}" />
-<script>
-		$(document).ready(function(){
-			$("#countdown").countdown({
-				date: "01 june 2016 12:00:00",
-				format: "on"
-			},
-			
-			function() {
-				// callback function
-			});
-		});
+<script >
+
+// JavaScript Document
+var Timer;
+var TotalSeconds;
+
+function CreateTimer(TimerID, Time){
+    var oop=this;
+	this.Timer = document.getElementById(TimerID);
+	this.TotalSeconds = Time;
+	this.update();
+	oop.to=setTimeout(function(){ oop.tick(); }, 1000);
+}
+
+CreateTimer.prototype={
+
+ tick:function(){
+    var oop=this;
+	if (this.TotalSeconds <= 0){
+		return;
+	}
+	this.TotalSeconds -= 1;
+	this.update()
+	oop.to=setTimeout(function(){ oop.tick(); }, 1000);
+ },
+
+ update:function(){
+ 	var Seconds = this.TotalSeconds,Days = Math.floor(Seconds / 86400);
+	Seconds -= Days * 86400;
+	var Hours = Math.floor(Seconds / 3600);
+	Seconds -= Hours * (3600);
+	var Minutes = Math.floor(Seconds / 60);
+	Seconds -= Minutes * (60);
+	var TimeStr = ((Days > 0) ? Days + " days " : "") +
+	LeadingZero(Hours) + ":" + LeadingZero(Minutes) + ":" + LeadingZero(Seconds)
+	this.Timer.innerHTML = TimeStr;
+ }
+
+}
+
+
+function LeadingZero(Time){
+	return (Time < 10) ? "0" + Time : + Time;
+}
+
 </script>
-<script>
-                $(document).ready(function(){
-			$("#countdown1").countdown({
-				date: "17 june 2016 12:00:00",
-				format: "on"
-			},
-			
-			function() {
-				// callback function
-			});
-		});
-</script>
-<script>
-                $(document).ready(function(){
-			$("#countdown2").countdown({
-				date: "17 july 2016 12:00:00",
-				format: "on"
-			},
-			
-			function() {
-				// callback function
-			});
-		});
-</script>
-<script>
-                $(document).ready(function(){
-			$("#countdown3").countdown({
-				date: "17 june 2016 12:00:00",
-				format: "on"
-			},
-			
-			function() {
-				// callback function
-			});
-		});
-	</script>
-        <script>
-                        (function($) {
-                        $.fn.countdown = function(options, callback) {
-
-                                //custom 'this' selector
-                                thisEl = $(this);
-
-                                //array of custom settings
-                                var settings = { 
-                                        'date': null,
-                                        'format': null
-                                };
-
-                                //append the settings array to options
-                                if(options) {
-                                        $.extend(settings, options);
-                                }
-
-                                //main countdown function
-                                function countdown_proc() {
-
-                                        eventDate = Date.parse(settings['date']) / 1000;
-                                        currentDate = Math.floor($.now() / 1000);
-
-                                        if(eventDate <= currentDate) {
-                                                callback.call(this);
-                                                clearInterval(interval);
-                                        }
-
-                                        seconds = eventDate - currentDate;
-
-                                        days = Math.floor(seconds / (60 * 60 * 24)); //calculate the number of days
-                                        seconds -= days * 60 * 60 * 24; //update the seconds variable with no. of days removed
-
-                                        hours = Math.floor(seconds / (60 * 60));
-                                        seconds -= hours * 60 * 60; //update the seconds variable with no. of hours removed
-
-                                        minutes = Math.floor(seconds / 60);
-                                        seconds -= minutes * 60; //update the seconds variable with no. of minutes removed
-
-                                        //conditional Ss
-                                        if (days == 1) { thisEl.find(".timeRefDays").text("day"); } else { thisEl.find(".timeRefDays").text("days"); }
-                                        if (hours == 1) { thisEl.find(".timeRefHours").text("hour"); } else { thisEl.find(".timeRefHours").text("hours"); }
-                                        if (minutes == 1) { thisEl.find(".timeRefMinutes").text("minute"); } else { thisEl.find(".timeRefMinutes").text("minutes"); }
-                                        if (seconds == 1) { thisEl.find(".timeRefSeconds").text("second"); } else { thisEl.find(".timeRefSeconds").text("seconds"); }
-
-                                        //logic for the two_digits ON setting
-                                        if(settings['format'] == "on") {
-                                                days = (String(days).length >= 2) ? days : "0" + days;
-                                                hours = (String(hours).length >= 2) ? hours : "0" + hours;
-                                                minutes = (String(minutes).length >= 2) ? minutes : "0" + minutes;
-                                                seconds = (String(seconds).length >= 2) ? seconds : "0" + seconds;
-                                        }
-
-                                        //update the countdown's html values.
-                                        if(!isNaN(eventDate)) {
-                                                thisEl.find(".days").text(days);
-                                                thisEl.find(".hours").text(hours);
-                                                thisEl.find(".minutes").text(minutes);
-                                                thisEl.find(".seconds").text(seconds);
-                                        } else { 
-                                                alert("Invalid date. Here's an example: 12 Tuesday 2012 17:30:00");
-                                                clearInterval(interval); 
-                                        }
-                                }
-
-                                //run the function
-                                countdown_proc();
-
-                                //loop the function
-                                interval = setInterval(countdown_proc, 1000);
-
-                        }
-                }) (jQuery);
-                </script>
              {%block stylesheets %}
     
               {%endblock%}
@@ -173,77 +93,56 @@
                     <div class="row">
                         <div class="col-lg-3">
                             {% if first is defined %}
-                                <span id="title">{{ first.firstTeam }}</span>
-                            </br>
-                            </br>
+                            <span id="title">{{ first.firstTeam }}</span><p>
+                            <strong><p id='between'>V/S</p></strong>
                             <span id="title">{{ first.secondTeam }}</span>
                             {%endif%}     
-                            <ul id="countdown">
-                            <li> <span class="days">00</span>
-                            </li>
-                            <li> <span class="hours">00</span>
-                            </li>
-                            <li> <span class="minutes">00</span>
-                            </li>
-                            <li> <span class="seconds">00</span>
-                            </li>
-                            </ul>
-                        </div>
+                            <strong><p id='timer1'></p></strong>
+                            </div>
                         <div class="col-lg-3">
                             {% if second is defined %}
                                 <span id="title">{{ second.firstTeam }}</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id="title">{{ second.secondTeam }}</span>
                             {%endif%}
-                            <ul id="countdown1">
-                            <li> <span class="days">00</span>
-                            </li>
-                            <li> <span class="hours">00</span>
-                            </li>
-                            <li> <span class="minutes">00</span>
-                            </li>
-                            <li> <span class="seconds">00</span>
-                            </li>
-                            </ul>
+                            <strong><p id='timer2'></p></strong>
                         </div>
                         <div class="col-lg-3">
                             {% if third is defined %}
                                 <span id="title">{{ third.firstTeam }}</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id="title">{{ third.secondTeam }}</span>
                             {%endif%}
-                            <ul id="countdown2">
-                            <li> <span class="days">00</span>
-                            </li>
-                            <li> <span class="hours">00</span>
-                            </li>
-                            <li> <span class="minutes">00</span>
-                            </li>
-                            <li> <span class="seconds">00</span>
-                            </li>
-                            </ul>
+                            <strong><p id='timer3'></p></strong>
                             </div>
                         <div class="col-lg-3">
                             {% if fourth is defined %}
                                 <span id="title">{{ fourth.firstTeam }}</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id="title">{{ fourth.secondTeam }} </span>
                             {% endif %}
-                            <ul id="countdown3">
-                            <li> <span class="days">00</span>
-                            </li>
-                            <li> <span class="hours">00</span>
-                            </li>
-                            <li> <span class="minutes">00</span>
-                            </li>
-                            <li> <span class="seconds">00</span>
-                            </li>
-                            </ul>
+                            <strong><p id='timer4'></p></strong>
                             </div>
                     </div>
+                            </br>
+                            </br>
+                            <div class="row1">
+                                <div class="col-lg-4">
+                                    <p id="best">BEST BATSMAN </p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <p id="best">BEST BOWLER </p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <p id="best">BEST ALROUDER </p>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                new CreateTimer("timer1", 30000);
+                                new CreateTimer("timer2", 30000);
+                                new CreateTimer("timer3", 30000);
+                                new CreateTimer("timer4", 30000);
+                            </script>
     </body>
 </html>
     
