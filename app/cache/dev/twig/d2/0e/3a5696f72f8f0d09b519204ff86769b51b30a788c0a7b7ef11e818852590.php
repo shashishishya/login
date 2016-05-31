@@ -88,8 +88,6 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
 
                 addedrows = newaddedrows;
                 
-                alert(addedrows[1]);
-
                 // if no match found then add the row :
                 if (!ok) {
                     // retrieve the id of the element to match the id of the new row :
@@ -114,9 +112,9 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
     </head>
     <body>
         ";
-        // line 76
+        // line 74
         $this->displayBlock('container', $context, $blocks);
-        // line 105
+        // line 103
         echo "        <div class=\"row\">
             <div class=\"col-lg-4\">
                 <p id=\"listplayer\"><h4><b> LIST OF THE PLAYERS IN TEAM </b></h4></p>
@@ -131,12 +129,12 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                        </thead>
                        <tbody>
                            ";
-        // line 118
+        // line 116
         if (array_key_exists("player", $context)) {
-            // line 119
+            // line 117
             echo "                           <tr class=\"success\" id=\"sour0\">
                                <td>";
-            // line 120
+            // line 118
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player1"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -145,7 +143,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"warning\" id=\"sour1\">
                                <td>";
-            // line 126
+            // line 124
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player2"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -154,7 +152,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"info\" id=\"sour2\">
                                <td>";
-            // line 132
+            // line 130
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player3"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -163,7 +161,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"warning\" id=\"sour3\">
                                <td>";
-            // line 138
+            // line 136
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player4"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -172,7 +170,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"success\" id=\"sour4\">
                                <td>";
-            // line 144
+            // line 142
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player5"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -181,7 +179,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"warning\" id=\"sour5\">
                                <td>";
-            // line 150
+            // line 148
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player6"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -190,7 +188,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"info\">
                                <td>";
-            // line 156
+            // line 154
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player7"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -199,7 +197,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"warning\">
                                <td>";
-            // line 162
+            // line 160
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player8"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -208,7 +206,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                            <tr class=\"success\">
                                <td>";
-            // line 168
+            // line 166
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player9"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -217,7 +215,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"warning\">
                                <td>";
-            // line 174
+            // line 172
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player10"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -226,7 +224,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"info\">
                                <td>";
-            // line 180
+            // line 178
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player11"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -235,7 +233,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"warning\">
                                <td>";
-            // line 186
+            // line 184
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player12"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -244,7 +242,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                            <tr class=\"success\">
                                <td>";
-            // line 192
+            // line 190
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player13"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -253,7 +251,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"warning\">
                                <td>";
-            // line 198
+            // line 196
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player14"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -262,7 +260,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                             <tr class=\"info\">
                                <td>";
-            // line 204
+            // line 202
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["player"]) ? $context["player"] : $this->getContext($context, "player")), 0, array(), "array"), "player15"), "html", null, true);
             echo "</td>
                                <td> 23 </td>
@@ -271,7 +269,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                            </tr>
                            ";
         }
-        // line 210
+        // line 208
         echo "                       </tbody>
                    </table>     
             </div>
@@ -296,49 +294,49 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                 </br>
                        <div class=\"container\">
                            <span id=\"rcb\" value=\"rcb\" name=\"rcb\"><a href=\"";
-        // line 233
+        // line 231
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "#rcb\">RCB</a></span>
                        </div>
                        <div class=\"container\">
                            <span><a href=\"";
-        // line 236
+        // line 234
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\">PUNE</a></span>
                        </div>
                        <div class=\"container\">
                            <span><a href=\"";
-        // line 239
+        // line 237
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\">PUNJAB</a></span>
                        </div>
                        <div class=\"container\">
                            <span><a href=\"";
-        // line 242
+        // line 240
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\">MUMBAI</a></span>
                        </div>
                        <div class=\"container\">
                            <span><a href=\"";
-        // line 245
+        // line 243
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\">KOLKATTA</a></span>
                        </div>
                        <div class=\"container\">
                            <span><a href=\"";
-        // line 248
+        // line 246
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\">GUJRATH</a></span>
                        </div>
                        <div class=\"container\">
                            <span><a href=\"";
-        // line 251
+        // line 249
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\">DELHI</a></span>
                        </div>
                        <div class=\"container\">
                            <span><a href=\"";
-        // line 254
+        // line 252
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\">Hydrabad</a></span>
                        </div>
@@ -367,25 +365,25 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
 </html>";
     }
 
-    // line 76
+    // line 74
     public function block_container($context, array $blocks = array())
     {
-        // line 77
+        // line 75
         echo "            <div class=\"container\">
                 <div class=\"well\">
                     <h2 id=\"heading\"> <strong> Welcome for user created  </strong></h2>
                 </div>
             </div>
           ";
-        // line 82
+        // line 80
         if (array_key_exists("name", $context)) {
-            // line 83
+            // line 81
             echo "            <h4> hello ";
             echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
             echo "</h4>
             ";
         }
-        // line 85
+        // line 83
         echo "            
                 <nav class=\"navbar navbar-inverse\">
                 <div class=\"container-fluid\">
@@ -394,21 +392,21 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                     </div>
                  <ul class=\"nav navbar-nav\">
                     <li class=\"active\"><a href=\"";
-        // line 92
+        // line 90
         echo $this->env->getExtension('routing')->getPath("login_login_home");
         echo "\">HoMe </a></li>
                     <li><a href=\"#\"> Scores </a></li>
                     <li><a href=\"#\"> Status </a></li>
                     <li><a href=\"#\"> Upcomming </a></li>
                     <li><a href=\"";
-        // line 96
+        // line 94
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\"> League </a></li>
                     <li><a href=\"#\"> Abount </a></li>
                 </ul>
                     <ul class=\"nav navbar-nav navbar-right\">
                         <li><a href=\"";
-        // line 100
+        // line 98
         echo $this->env->getExtension('routing')->getPath("login_login_main");
         echo "\"><span class=\"glyphicon glyphicon-user\"></span>Logout</a></li>
                     </ul>
@@ -429,6 +427,6 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
 
     public function getDebugInfo()
     {
-        return array (  412 => 100,  405 => 96,  398 => 92,  389 => 85,  383 => 83,  381 => 82,  374 => 77,  371 => 76,  342 => 254,  336 => 251,  330 => 248,  324 => 245,  318 => 242,  312 => 239,  306 => 236,  300 => 233,  275 => 210,  266 => 204,  257 => 198,  248 => 192,  239 => 186,  230 => 180,  221 => 174,  212 => 168,  203 => 162,  194 => 156,  185 => 150,  176 => 144,  167 => 138,  158 => 132,  149 => 126,  140 => 120,  137 => 119,  135 => 118,  120 => 105,  118 => 76,  53 => 14,  49 => 13,  45 => 12,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
+        return array (  410 => 98,  403 => 94,  396 => 90,  387 => 83,  381 => 81,  379 => 80,  372 => 75,  369 => 74,  340 => 252,  334 => 249,  328 => 246,  322 => 243,  316 => 240,  310 => 237,  304 => 234,  298 => 231,  273 => 208,  264 => 202,  255 => 196,  246 => 190,  237 => 184,  228 => 178,  219 => 172,  210 => 166,  201 => 160,  192 => 154,  183 => 148,  174 => 142,  165 => 136,  156 => 130,  147 => 124,  138 => 118,  135 => 117,  133 => 116,  118 => 103,  116 => 74,  53 => 14,  49 => 13,  45 => 12,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }
