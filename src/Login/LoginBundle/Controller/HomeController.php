@@ -18,7 +18,7 @@ class HomeController extends Controller{
             $user = $repository->findAll(array('id' => $today));
         //$user = $repository->findOneBy(array('username' => $username,'password' => $password));
             //echo "the values of the user id the $user";
-            print_r($user);
+           // print_r($user);
             return $this->render('LoginLoginBundle:Home:home.html.twig',array('name' => $user));
         }
 }
