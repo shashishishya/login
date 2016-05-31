@@ -108,4 +108,17 @@ class Matches
     {
         return $this->match;
     }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Matches
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 }

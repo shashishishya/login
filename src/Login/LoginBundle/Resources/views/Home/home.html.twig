@@ -8,6 +8,16 @@
         <link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">  
         <link href="{{asset('bundles/loginlogin/css/sample.css')}}" rel="stylesheet">
         <link href="{{asset('bundles/loginlogin/css/home.css')}}" rel="stylesheet">
+        <style>
+        .round img {
+            display: block;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 50%;
+            border-radius: 50%;
+            min-height:100%
+        }
+        </style>
 
 <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -129,12 +139,21 @@ function LeadingZero(Time){
                             <div class="row1">
                                 <div class="col-lg-4">
                                     <p id="best">BEST BATSMAN </p>
+                                    <div class="round">
+                                    <img src="{{asset('bundles/loginlogin/images/virat-kohli-967.png')}}">
+                                    </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <p id="best">BEST BOWLER </p>
+                                    <div class="round">
+                                    <img src="{{asset('bundles/loginlogin/images/vinaykumar.jpg')}}"> 
+                                    </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <p id="best">BEST ALROUDER </p>
+                                    <div class="round">
+                                    <img src="{{asset('bundles/loginlogin/images/ab-de-villiers-sa.png')}}">
+                                    </div>
                                 </div>
                             </div>
                             <script type="text/javascript">

@@ -36,6 +36,16 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
         // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/home.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+        <style>
+        .round img {
+            display: block;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 50%;
+            border-radius: 50%;
+            min-height:100%
+        }
+        </style>
 
 <!--[if lt IE 9]>
 \t\t<script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>
@@ -90,9 +100,9 @@ function LeadingZero(Time){
 
 </script>
              ";
-        // line 64
+        // line 74
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 67
+        // line 77
         echo "    </head>
     <body>
     <div class=\"container\">
@@ -115,11 +125,11 @@ function LeadingZero(Time){
                 </ul>
                     <ul class=\"nav navbar-nav navbar-right\">
                         <li><a href=\"";
-        // line 88
+        // line 98
         echo $this->env->getExtension('routing')->getPath("login_login_signup");
         echo "\"><span class=\"glyphicon glyphicon-user\"></span>Sign Up </a></li>
                         <li><a href=\"";
-        // line 89
+        // line 99
         echo $this->env->getExtension('routing')->getPath("login_login_homepage");
         echo "\"><span class=\"glyphicon glyphicon-log-in\"></span> LOgin </a></li>
                     </ul>
@@ -128,75 +138,75 @@ function LeadingZero(Time){
                     <div class=\"row\">
                         <div class=\"col-lg-3\">
                             ";
-        // line 95
+        // line 105
         if (array_key_exists("first", $context)) {
-            // line 96
+            // line 106
             echo "                            <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "firstTeam"), "html", null, true);
             echo "</span><p>
                             <strong><p id='between'>V/S</p></strong>
                             <span id=\"title\">";
-            // line 98
+            // line 108
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 99
+        // line 109
         echo "     
                             <strong><p id='timer1'></p></strong>
                             </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 103
+        // line 113
         if (array_key_exists("second", $context)) {
-            // line 104
+            // line 114
             echo "                                <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "firstTeam"), "html", null, true);
             echo "</span>
                                 <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 106
+            // line 116
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 108
+        // line 118
         echo "                            <strong><p id='timer2'></p></strong>
                         </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 111
+        // line 121
         if (array_key_exists("third", $context)) {
-            // line 112
+            // line 122
             echo "                                <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "firstTeam"), "html", null, true);
             echo "</span>
                                 <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 114
+            // line 124
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 116
+        // line 126
         echo "                            <strong><p id='timer3'></p></strong>
                             </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 119
+        // line 129
         if (array_key_exists("fourth", $context)) {
-            // line 120
+            // line 130
             echo "                                <span id=\"title\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "firstTeam"), "html", null, true);
             echo "</span>
                                 <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 122
+            // line 132
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "secondTeam"), "html", null, true);
             echo " </span>
                             ";
         }
-        // line 124
+        // line 134
         echo "                            <strong><p id='timer4'></p></strong>
                             </div>
                     </div>
@@ -205,12 +215,30 @@ function LeadingZero(Time){
                             <div class=\"row1\">
                                 <div class=\"col-lg-4\">
                                     <p id=\"best\">BEST BATSMAN </p>
+                                    <div class=\"round\">
+                                    <img src=\"";
+        // line 143
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/images/virat-kohli-967.png"), "html", null, true);
+        echo "\">
+                                    </div>
                                 </div>
                                 <div class=\"col-lg-4\">
                                     <p id=\"best\">BEST BOWLER </p>
+                                    <div class=\"round\">
+                                    <img src=\"";
+        // line 149
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/images/vinaykumar.jpg"), "html", null, true);
+        echo "\"> 
+                                    </div>
                                 </div>
                                 <div class=\"col-lg-4\">
                                     <p id=\"best\">BEST ALROUDER </p>
+                                    <div class=\"round\">
+                                    <img src=\"";
+        // line 155
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/images/ab-de-villiers-sa.png"), "html", null, true);
+        echo "\">
+                                    </div>
                                 </div>
                             </div>
                             <script type=\"text/javascript\">
@@ -224,10 +252,10 @@ function LeadingZero(Time){
     ";
     }
 
-    // line 64
+    // line 74
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 65
+        // line 75
         echo "    
               ";
     }
@@ -244,6 +272,6 @@ function LeadingZero(Time){
 
     public function getDebugInfo()
     {
-        return array (  231 => 65,  228 => 64,  200 => 124,  195 => 122,  189 => 120,  187 => 119,  182 => 116,  177 => 114,  171 => 112,  169 => 111,  164 => 108,  159 => 106,  153 => 104,  151 => 103,  145 => 99,  140 => 98,  134 => 96,  132 => 95,  123 => 89,  119 => 88,  96 => 67,  94 => 64,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
+        return array (  259 => 75,  256 => 74,  239 => 155,  230 => 149,  221 => 143,  210 => 134,  205 => 132,  199 => 130,  197 => 129,  192 => 126,  187 => 124,  181 => 122,  179 => 121,  174 => 118,  169 => 116,  163 => 114,  161 => 113,  155 => 109,  150 => 108,  144 => 106,  142 => 105,  133 => 99,  129 => 98,  106 => 77,  104 => 74,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }
