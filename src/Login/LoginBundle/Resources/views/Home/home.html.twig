@@ -3,13 +3,80 @@
     <head>
         <meta charset="utf-8">
         <title> Home Page </title>
-        <meta name="viewport" content="width-device-width", initial-scale="1.0">
         <meta name="description" content="">
         <meta name="author" content="">
         <link href="{{asset('bundles/loginlogin/css/bootstrap.css')}}" rel="stylesheet">
-        <link href="{{asset('bundles/loginlogin/css/bootstrap-responsive.css')}}" rel="stylesheet">   
+        <link href="{{asset('bundles/loginlogin/css/bootstrap.min.css')}}" rel="stylesheet"> 
         <link href="{{asset('bundles/loginlogin/css/sample.css')}}" rel="stylesheet">
         <link href="{{asset('bundles/loginlogin/css/home.css')}}" rel="stylesheet">
+        <style>
+        .round img {
+            display: block;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 50%;
+            border-radius: 50%;
+            min-height:100%
+        }
+        #bat_table{
+            width: 80%;
+            margin-top: 13%;
+            border-radius: 10px;
+        }
+        </style>
+
+<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<!-- JS -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script >
+
+// JavaScript Document
+var Timer;
+var TotalSeconds;
+
+function CreateTimer(TimerID, Time){
+    var oop=this;
+	this.Timer = document.getElementById(TimerID);
+	this.TotalSeconds = Time;
+	this.update();
+	oop.to=setTimeout(function(){ oop.tick(); }, 1000);
+}
+
+CreateTimer.prototype={
+
+ tick:function(){
+    var oop=this;
+	if (this.TotalSeconds <= 0){
+		return;
+	}
+	this.TotalSeconds -= 1;
+	this.update()
+	oop.to=setTimeout(function(){ oop.tick(); }, 1000);
+ },
+
+ update:function(){
+ 	var Seconds = this.TotalSeconds,Days = Math.floor(Seconds / 86400);
+	Seconds -= Days * 86400;
+	var Hours = Math.floor(Seconds / 3600);
+	Seconds -= Hours * (3600);
+	var Minutes = Math.floor(Seconds / 60);
+	Seconds -= Minutes * (60);
+	var TimeStr = ((Days > 0) ? Days + " days " : "") +
+	LeadingZero(Hours) + ":" + LeadingZero(Minutes) + ":" + LeadingZero(Seconds)
+	this.Timer.innerHTML = TimeStr;
+ }
+
+}
+
+
+function LeadingZero(Time){
+	return (Time < 10) ? "0" + Time : + Time;
+}
+
+</script>
              {%block stylesheets %}
     
               {%endblock%}
@@ -41,44 +108,120 @@
             </nav>
                     <div class="row">
                         <div class="col-lg-3">
-                            {% if name is defined %}
-                                <span id="title">{{ name[0].firstTeam }}</span>
-                            </br>
-                            </br>
-                            <span id="title">{{ name[0].secondTeam }}</span>
-                            {%endif%}
-                        </div>
-                        <div class="col-lg-3">
-                            {% if name is defined %}
-                                <span id="title">{{ name[0].firstTeam }}</span>
-                                </br>
-                                </br>
-                                <span id="title">{{ name[0].secondTeam }}</span>
-                            {%endif%}
-                        </div>
-                        <div class="col-lg-3">
-                            {% if name is defined %}
-                                <span id="title">{{ name[0].firstTeam }}</span>
-                                </br>
-                                </br>
-                                <span id="title">{{ name[0].secondTeam }}</span>
-                            {%endif%}
+                            {% if first is defined %}
+                            <span id="title">{{ first.firstTeam }}</span><p>
+                            <strong><p id='between'>V/S</p></strong>
+                            <span id="title">{{ first.secondTeam }}</span>
+                            {%endif%}     
+                            <strong><p id='timer1'></p></strong>
                             </div>
                         <div class="col-lg-3">
-                            {% if name is defined %}
-                                <span id="title">{{ name[0].firstTeam }}</span>
-                                </br>
-                                </br>
-                                <span id="title">{{ name[0].secondTeam }} </span>
+                            {% if second is defined %}
+                                <span id="title">{{ second.firstTeam }}</span>
+                                <strong><p id='between'>V/S</p></strong>
+                                <span id="title">{{ second.secondTeam }}</span>
+                            {%endif%}
+                            <strong><p id='timer2'></p></strong>
+                        </div>
+                        <div class="col-lg-3">
+                            {% if third is defined %}
+                                <span id="title">{{ third.firstTeam }}</span>
+                                <strong><p id='between'>V/S</p></strong>
+                                <span id="title">{{ third.secondTeam }}</span>
+                            {%endif%}
+                            <strong><p id='timer3'></p></strong>
+                            </div>
+                        <div class="col-lg-3">
+                            {% if fourth is defined %}
+                                <span id="title">{{ fourth.firstTeam }}</span>
+                                <strong><p id='between'>V/S</p></strong>
+                                <span id="title">{{ fourth.secondTeam }} </span>
                             {% endif %}
+                            <strong><p id='timer4'></p></strong>
                             </div>
                     </div>
-                     {% if name is defined %}
-                        <div class="alert-info fade in">
-                            
-                        </div>              
-                     {%endif%}
-                            
+                            </br>
+                            </br>
+                            <div class="row1">
+                                <div class="col-lg-4">
+                                    <p id="best">BEST BATSMAN </p>
+                                    <div class="round">
+                                    <img src="{{asset('bundles/loginlogin/images/virat-kohli-967.png')}}">
+                                    </div>
+                                    <div class="table table-responsive">
+                                    <table class="table" id="bat_table">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <p id="best">BEST BOWLER </p>
+                                    <div class="round">
+                                    <img src="{{asset('bundles/loginlogin/images/vinaykumar.jpg')}}"> 
+                                   <div class="table table-responsive">
+                                    <table class="table" id="bat_table">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <p id="best">BEST ALROUDER </p>
+                                    <div class="round">
+                                    <img src="{{asset('bundles/loginlogin/images/ab-de-villiers-sa.png')}}">
+                                   <div class="table table-responsive">
+                                    <table class="table" id="bat_table">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                new CreateTimer("timer1", 30000);
+                                new CreateTimer("timer2", 30000);
+                                new CreateTimer("timer3", 30000);
+                                new CreateTimer("timer4", 30000);
+                            </script>
     </body>
 </html>
     

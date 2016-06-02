@@ -19,18 +19,80 @@ and open the template in the editor.
  }
 .row{
     width: 95%;
-    height: 150px;
+    height: 161px;
     background-color: white;
     margin-left: 40px;
     border-style: dotted;
+}
+row1{
+    width:100%;
+    background-color: grey;
 }
 .col-lg-3{
     display: inline-block;
     box-sizing: border-box;
     float: left;
     min-height: 1px;
-    border-right: 1px solid #ecebeb;
-    line-height: 1.4;
-    margin: 15px 0;
+    border-right: 3px solid #31708f;
+    line-height: 1.3;
     padding: 0 20px;
 }
+    #clockdiv{
+			font-family: sans-serif;
+			color: #fff;
+			display: inline-block;
+			font-weight: 100;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		#clockdiv > div{
+			padding: 1px;
+			border-radius: 3px;
+			background: #00BF96;
+			display: inline-block;
+		}
+
+		#clockdiv div > span{
+			padding: 15px;
+			border-radius: 3px;
+			background: #00816A;
+			display: inline-block;
+		}
+
+                
+		.smalltext{
+			padding-top: 5px;
+			font-size: 1px;
+		}
+                #timer1{
+                    text-shadow: 2px 2px 5px red;
+                    font-size: 45px;
+                }
+                #timer2{
+                    text-shadow: 2px 2px 5px red;
+                    font-size: 45px;
+                }
+                #timer3{
+                    text-shadow: 2px 2px 5px red;
+                    font-size: 45px;
+                }
+                #timer4{
+                    text-shadow: 2px 2px 5px red;
+                    font-size: 45px;
+                }
+                #between{
+                    text-shadow: 2px 2px 5px red;
+                    margin-left: 07%;
+                    width: 30%;
+                }
+                #best{
+                    text-shadow: 2px 2px 5px red;
+                    font-size: 25px;
+                    margin-left: 12%;
+                }
+                #bat_table{
+                     width: 80%;
+                     margin-top: 10%;
+                }
+

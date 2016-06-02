@@ -48,8 +48,6 @@
 
                 addedrows = newaddedrows;
                 
-                alert(addedrows[1]);
-
                 // if no match found then add the row :
                 if (!ok) {
                     // retrieve the id of the element to match the id of the new row :
@@ -89,11 +87,11 @@
                         <a class="navbar-brand" href="#">Website Name </a>
                     </div>
                  <ul class="nav navbar-nav">
-                    <li><a href="{{path('login_login_home')}}">HoMe </a></li>
+                    <li class="active"><a href="{{path('login_login_home')}}">HoMe </a></li>
                     <li><a href="#"> Scores </a></li>
                     <li><a href="#"> Status </a></li>
                     <li><a href="#"> Upcomming </a></li>
-                    <li class="active"><a href="#"> League </a></li>
+                    <li><a href="{{path('login_login_main')}}"> League </a></li>
                     <li><a href="#"> Abount </a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">

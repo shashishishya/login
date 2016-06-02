@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="Login\LoginBundle\Entity\Matches" table="matches">
-    <id name="id" type="integer" column="id">
+    <id name="match" type="string" column="MATCH" length="255">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="id" type="integer" column="id" nullable="false"/>
     <field name="firstTeam" type="string" column="first_team" length="255" nullable="false"/>
     <field name="secondTeam" type="string" column="second_team" length="255" nullable="false"/>
   </entity>

@@ -22,29 +22,96 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
     <head>
         <meta charset=\"utf-8\">
         <title> Home Page </title>
-        <meta name=\"viewport\" content=\"width-device-width\", initial-scale=\"1.0\">
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"\">
         <link href=\"";
-        // line 9
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/bootstrap.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
-        // line 10
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/bootstrap-responsive.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">   
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\"> 
         <link href=\"";
-        // line 11
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/sample.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
-        // line 12
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/css/home.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
+        <style>
+        .round img {
+            display: block;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 50%;
+            border-radius: 50%;
+            min-height:100%
+        }
+        #bat_table{
+            width: 80%;
+            margin-top: 13%;
+            border-radius: 10px;
+        }
+        </style>
+
+<!--[if lt IE 9]>
+\t\t<script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>
+\t<![endif]-->
+
+<!-- JS -->
+<script src=\"http://code.jquery.com/jquery-latest.js\"></script>
+<script >
+
+// JavaScript Document
+var Timer;
+var TotalSeconds;
+
+function CreateTimer(TimerID, Time){
+    var oop=this;
+\tthis.Timer = document.getElementById(TimerID);
+\tthis.TotalSeconds = Time;
+\tthis.update();
+\toop.to=setTimeout(function(){ oop.tick(); }, 1000);
+}
+
+CreateTimer.prototype={
+
+ tick:function(){
+    var oop=this;
+\tif (this.TotalSeconds <= 0){
+\t\treturn;
+\t}
+\tthis.TotalSeconds -= 1;
+\tthis.update()
+\toop.to=setTimeout(function(){ oop.tick(); }, 1000);
+ },
+
+ update:function(){
+ \tvar Seconds = this.TotalSeconds,Days = Math.floor(Seconds / 86400);
+\tSeconds -= Days * 86400;
+\tvar Hours = Math.floor(Seconds / 3600);
+\tSeconds -= Hours * (3600);
+\tvar Minutes = Math.floor(Seconds / 60);
+\tSeconds -= Minutes * (60);
+\tvar TimeStr = ((Days > 0) ? Days + \" days \" : \"\") +
+\tLeadingZero(Hours) + \":\" + LeadingZero(Minutes) + \":\" + LeadingZero(Seconds)
+\tthis.Timer.innerHTML = TimeStr;
+ }
+
+}
+
+
+function LeadingZero(Time){
+\treturn (Time < 10) ? \"0\" + Time : + Time;
+}
+
+</script>
              ";
-        // line 13
+        // line 80
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 83
         echo "    </head>
     <body>
     <div class=\"container\">
@@ -67,11 +134,11 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
                 </ul>
                     <ul class=\"nav navbar-nav navbar-right\">
                         <li><a href=\"";
-        // line 37
+        // line 104
         echo $this->env->getExtension('routing')->getPath("login_login_signup");
         echo "\"><span class=\"glyphicon glyphicon-user\"></span>Sign Up </a></li>
                         <li><a href=\"";
-        // line 38
+        // line 105
         echo $this->env->getExtension('routing')->getPath("login_login_homepage");
         echo "\"><span class=\"glyphicon glyphicon-log-in\"></span> LOgin </a></li>
                     </ul>
@@ -80,97 +147,178 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
                     <div class=\"row\">
                         <div class=\"col-lg-3\">
                             ";
-        // line 44
-        if (array_key_exists("name", $context)) {
-            // line 45
-            echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
-            echo "</span>
-                            </br>
-                            </br>
+        // line 111
+        if (array_key_exists("first", $context)) {
+            // line 112
+            echo "                            <span id=\"title\">";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "firstTeam"), "html", null, true);
+            echo "</span><p>
+                            <strong><p id='between'>V/S</p></strong>
                             <span id=\"title\">";
-            // line 48
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 114
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["first"]) ? $context["first"] : $this->getContext($context, "first")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 50
-        echo "                        </div>
+        // line 115
+        echo "     
+                            <strong><p id='timer1'></p></strong>
+                            </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 52
-        if (array_key_exists("name", $context)) {
-            // line 53
+        // line 119
+        if (array_key_exists("second", $context)) {
+            // line 120
             echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "firstTeam"), "html", null, true);
             echo "</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 56
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 122
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["second"]) ? $context["second"] : $this->getContext($context, "second")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 58
-        echo "                        </div>
+        // line 124
+        echo "                            <strong><p id='timer2'></p></strong>
+                        </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 60
-        if (array_key_exists("name", $context)) {
-            // line 61
+        // line 127
+        if (array_key_exists("third", $context)) {
+            // line 128
             echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "firstTeam"), "html", null, true);
             echo "</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 64
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 130
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["third"]) ? $context["third"] : $this->getContext($context, "third")), "secondTeam"), "html", null, true);
             echo "</span>
                             ";
         }
-        // line 66
-        echo "                            </div>
+        // line 132
+        echo "                            <strong><p id='timer3'></p></strong>
+                            </div>
                         <div class=\"col-lg-3\">
                             ";
-        // line 68
-        if (array_key_exists("name", $context)) {
-            // line 69
+        // line 135
+        if (array_key_exists("fourth", $context)) {
+            // line 136
             echo "                                <span id=\"title\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "firstTeam"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "firstTeam"), "html", null, true);
             echo "</span>
-                                </br>
-                                </br>
+                                <strong><p id='between'>V/S</p></strong>
                                 <span id=\"title\">";
-            // line 72
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), 0, array(), "array"), "secondTeam"), "html", null, true);
+            // line 138
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["fourth"]) ? $context["fourth"] : $this->getContext($context, "fourth")), "secondTeam"), "html", null, true);
             echo " </span>
                             ";
         }
-        // line 74
-        echo "                            </div>
+        // line 140
+        echo "                            <strong><p id='timer4'></p></strong>
+                            </div>
                     </div>
-                     ";
-        // line 76
-        if (array_key_exists("name", $context)) {
-            // line 77
-            echo "                        <div class=\"alert-info fade in\">
-                            
-                        </div>              
-                     ";
-        }
-        // line 81
-        echo "                            
+                            </br>
+                            </br>
+                            <div class=\"row1\">
+                                <div class=\"col-lg-4\">
+                                    <p id=\"best\">BEST BATSMAN </p>
+                                    <div class=\"round\">
+                                    <img src=\"";
+        // line 149
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/images/virat-kohli-967.png"), "html", null, true);
+        echo "\">
+                                    </div>
+                                    <div class=\"table table-responsive\">
+                                    <table class=\"table\" id=\"bat_table\">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope=\"row\">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                </div>
+                                <div class=\"col-lg-4\">
+                                    <p id=\"best\">BEST BOWLER </p>
+                                    <div class=\"round\">
+                                    <img src=\"";
+        // line 173
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/images/vinaykumar.jpg"), "html", null, true);
+        echo "\"> 
+                                   <div class=\"table table-responsive\">
+                                    <table class=\"table\" id=\"bat_table\">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope=\"row\">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class=\"col-lg-4\">
+                                    <p id=\"best\">BEST ALROUDER </p>
+                                    <div class=\"round\">
+                                    <img src=\"";
+        // line 197
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/images/ab-de-villiers-sa.png"), "html", null, true);
+        echo "\">
+                                   <div class=\"table table-responsive\">
+                                    <table class=\"table\" id=\"bat_table\">
+                                        <thead>
+                                          <tr>
+                                            <th>MATCHES</th>
+                                            <th>SCORES</th>
+                                            <th>BEST</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope=\"row\">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type=\"text/javascript\">
+                                new CreateTimer(\"timer1\", 30000);
+                                new CreateTimer(\"timer2\", 30000);
+                                new CreateTimer(\"timer3\", 30000);
+                                new CreateTimer(\"timer4\", 30000);
+                            </script>
     </body>
 </html>
     ";
     }
 
-    // line 13
+    // line 80
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 14
+        // line 81
         echo "    
               ";
     }
@@ -187,6 +335,6 @@ class __TwigTemplate_f4f7852178052eee91247a3a15f9ce3df77dc6e3b6a8335edfe0d1589ea
 
     public function getDebugInfo()
     {
-        return array (  174 => 14,  171 => 13,  164 => 81,  158 => 77,  156 => 76,  152 => 74,  147 => 72,  140 => 69,  138 => 68,  134 => 66,  129 => 64,  122 => 61,  120 => 60,  116 => 58,  111 => 56,  104 => 53,  102 => 52,  98 => 50,  93 => 48,  86 => 45,  84 => 44,  75 => 38,  71 => 37,  48 => 16,  46 => 13,  42 => 12,  38 => 11,  34 => 10,  30 => 9,  20 => 1,);
+        return array (  322 => 81,  319 => 80,  284 => 197,  257 => 173,  230 => 149,  219 => 140,  214 => 138,  208 => 136,  206 => 135,  201 => 132,  196 => 130,  190 => 128,  188 => 127,  183 => 124,  178 => 122,  172 => 120,  170 => 119,  164 => 115,  159 => 114,  153 => 112,  151 => 111,  142 => 105,  138 => 104,  115 => 83,  113 => 80,  41 => 11,  37 => 10,  33 => 9,  29 => 8,  20 => 1,);
     }
 }
