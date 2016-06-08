@@ -20,9 +20,9 @@ and open the template in the editor.
 .row{
     width: 95%;
     height: 161px;
-    background-color: white;
+    background-color: #FF9800;
     margin-left: 40px;
-    border-style: dotted;
+    border-style: outset;
 }
 row1{
     width:100%;
@@ -33,8 +33,6 @@ row1{
     box-sizing: border-box;
     float: left;
     min-height: 1px;
-    border-right: 3px solid #31708f;
-    line-height: 1.3;
     padding: 0 20px;
 }
     #clockdiv{

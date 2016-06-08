@@ -391,7 +391,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                         <a class=\"navbar-brand\" href=\"#\">Website Name </a>
                     </div>
                  <ul class=\"nav navbar-nav\">
-                    <li class=\"active\"><a href=\"";
+                    <li class=\"activefggggggggggggggggggggggggggg\"><a href=\"";
         // line 90
         echo $this->env->getExtension('routing')->getPath("login_login_home");
         echo "\">HoMe </a></li>
