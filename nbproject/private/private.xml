@@ -4,15 +4,28 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/config/routing.yml</file>
-            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/js/main.js</file>
-            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/css/Main.css</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/scores/scores.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/css/reset.css</file>
             <file>file:/C:/xampp/htdocs/Login/app/config/parameters.yml</file>
-            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/main/firstlogin.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/css/signup.css</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/css/sample.css</file>
             <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/Default/signup.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Controller/MainController.php</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/main/firstlogin.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Entity/BestPlayer.php</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/Home/home.html.twig</file>
             <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Controller/DefaultController.php</file>
             <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/Default/login.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Controller/HomeController.php</file>
+            <file>file:/C:/xampp/htdocs/Login/app/config/config.yml</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/js/C3counter.js</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/js/main.js</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Controller/ScoresController.php</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/css/Main.css</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/js/signup.js</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Entity/Matches.php</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/public/css/home.css</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Controller/MainController.php</file>
             <file>file:/C:/xampp/htdocs/Login/src/Login/LoginBundle/Entity/Users.php</file>
         </group>
     </open-files>
