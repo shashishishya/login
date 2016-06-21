@@ -1,0 +1,111 @@
+<?php
+
+namespace Login\LoginBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Scores
+ */
+class Scores
+{
+    /**
+     * @var string
+     */
+    private $playerName;
+
+    /**
+     * @var string
+     */
+    private $scores;
+
+    /**
+     * @var string
+     */
+    private $date;
+
+    /**
+     * @var string
+     */
+    private $userId;
+
+
+    /**
+     * Set playerName
+     *
+     * @param string $playerName
+     * @return Scores
+     */
+    public function setPlayerName($playerName)
+    {
+        $this->playerName = $playerName;
+
+        return $this;
+    }
+
+    /**
+     * Get playerName
+     *
+     * @return string 
+     */
+    public function getPlayerName()
+    {
+        return $this->playerName;
+    }
+
+    /**
+     * Set scores
+     *
+     * @param string $scores
+     * @return Scores
+     */
+    public function setScores($scores)
+    {
+        $this->scores = $scores;
+
+        return $this;
+    }
+
+    /**
+     * Get scores
+     *
+     * @return string 
+     */
+    public function getScores()
+    {
+        return $this->scores;
+    }
+
+    /**
+     * Set date
+     *
+     * @param string $date
+     * @return Scores
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return string 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return string 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+}

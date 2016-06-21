@@ -60,15 +60,27 @@
                     $('#destinationtable tr:last').after('<tr id="dest' + theid + '"><td>'
                                                    + $(this).find("td").eq(0).html() + '</td><td>'
                                                    + $(this).find("td").eq(1).html() + '</td><td>'
-                                                   + $(this).find("td").eq(2).html() + '</td><td>'
-                                                   + $(this).find("td").eq(3).html() + '</td></tr>');         
-
+                                                   + $(this).find("td").eq(2).html() + '</td><td onclick="deleteRow(this)" id="shashi">'
+                                                   + "delete" + '</td></tr>');         
                 }
 
 
                 });
             });
+            
+        function deleteRow(row){
+            var i=row.parentNode.parentNode.rowIndex;
+            document.getElementById('dest').deleteRow(i);
+            alert("shashi" + d);
+
+        }
             </script>
+            <style type="text/css">
+              #shashi{
+                font-size: 20px;
+                color:red;
+              }
+            </style>
     </head>
     <body>
         {% block container %}
@@ -87,8 +99,8 @@
                         <a class="navbar-brand" href="#">Website Name </a>
                     </div>
                  <ul class="nav navbar-nav">
-                    <li class="activefggggggggggggggggggggggggggg"><a href="{{path('login_login_home')}}">HoMe </a></li>
-                    <li><a href="#"> Scores </a></li>
+                    <li class="active"><a href="{{path('login_login_home')}}">HoMe </a></li>
+                    <li><a href="{{path('login_login_score')}}">Scores </a></li>
                     <li><a href="#"> Status </a></li>
                     <li><a href="#"> Upcomming </a></li>
                     <li><a href="{{path('login_login_main')}}"> League </a></li>
@@ -150,58 +162,58 @@
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                            <tr class="info">
+                            <tr class="info" id="sour6">
                                <td>{{ player[0].player7 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                            <tr class="warning">
+                            <tr class="warning" id="sour7">
                                <td>{{ player[0].player8 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                           <tr class="success">
+                           <tr class="success" id="sour8">
                                <td>{{ player[0].player9 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                            <tr class="warning">
+                            <tr class="warning" id="sour9">
                                <td>{{ player[0].player10 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                            <tr class="info">
+                            <tr class="info" id="sour10">
                                <td>{{ player[0].player11 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                            <tr class="warning">
+                            <tr class="warning" id="sour11">
                                <td>{{ player[0].player12 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                           <tr class="success">
+                           <tr class="success" id="sour12">
                                <td>{{ player[0].player13 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                            <tr class="warning">
+                            <tr class="warning" id="sour13">
                                <td>{{ player[0].player14 }}</td>
                                <td> 23 </td>
                                <td> 1000 </td>
                                <td> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </td>
                            </tr>
-                            <tr class="info">
+                            <tr class="info" id="sour14">
                                <td>{{ player[0].player15 }}</td>
                                <td> 23 </td>
-                               <td> <button type="button" class="use-address" /> </td>
+                               <td> 1000 </td>
                                <td><span class="glyphicon glyphicon-plus" aria-hidden="true" id="loginLink" onclick="toggleTable();"></span></td>
                            </tr>
                            {% endif %}
@@ -218,7 +230,7 @@
                                <th> NAME </th>
                                <th> MATCHES </th>
                                <th> POINTS </th>
-                               <th> Add </th>
+                               <th> DELETE</th>
                            </tr>
                        </thead> 
                 </table>

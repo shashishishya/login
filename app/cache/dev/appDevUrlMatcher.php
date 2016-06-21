@@ -155,6 +155,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Login\\LoginBundle\\Controller\\MainController::mainAction',  '_route' => 'login_login_main',);
         }
 
+        // login_login_score
+        if ($pathinfo === '/score') {
+            return array (  '_controller' => 'Login\\LoginBundle\\Controller\\ScoresController::scoreAction',  '_route' => 'login_login_score',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

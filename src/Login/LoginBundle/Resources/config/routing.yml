@@ -17,3 +17,7 @@ login_login_home:
 login_login_main:
     path:  /main
     defaults: { _controller: LoginLoginBundle:Main:main }
+    
+login_login_score:
+    path: /score
+    defaults: { _controller: LoginLoginBundle:Scores:score }
