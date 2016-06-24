@@ -12,6 +12,7 @@
         <link href="{{asset('bundles/loginlogin/css/Main.css')}}" rel="stylesheet">
         <script src="{{asset('bundles/loginlogin/js/main.js')}}"></script>
         <script src="{{asset('bundles/loginlogin/js/jquery-2.2.4.min.js')}}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script>
             var addedrows = new Array();
             $(document).ready(function() {
@@ -57,24 +58,23 @@
 
                     $( this ).css( "background-color", "#cacaca" );
 
-                    $('#destinationtable tr:last').after('<tr id="dest' + theid + '"><td>'
+                    $('#destinationtable tr:last').after('<tr class="shashi" id="dest' + theid + '"><td>'
                                                    + $(this).find("td").eq(0).html() + '</td><td>'
                                                    + $(this).find("td").eq(1).html() + '</td><td>'
-                                                   + $(this).find("td").eq(2).html() + '</td><td onclick="deleteRow(this)" id="shashi">'
+                                                   + $(this).find("td").eq(2).html() + '</td><td id="shashi">'
                                                    + "delete" + '</td></tr>');         
                 }
 
-
+                $(document).ready(function(){
+                  $(".shashi").click(function(){
+                      $(this).hide();
+                  });
+                });
                 });
             });
             
-        function deleteRow(row){
-            var i=row.parentNode.parentNode.rowIndex;
-            document.getElementById('dest').deleteRow(i);
-            alert("shashi" + d);
-
-        }
             </script>
+
             <style type="text/css">
               #shashi{
                 font-size: 20px;
@@ -103,7 +103,7 @@
                     <li><a href="{{path('login_login_score')}}">Scores </a></li>
                     <li><a href="#"> Status </a></li>
                     <li><a href="#"> Upcomming </a></li>
-                    <li><a href="{{path('login_login_main')}}"> League </a></li>
+                    <li><a href="{{path('login_login_league')}}"> League </a></li>
                     <li><a href="#"> Abount </a></li>
                 </ul>
                     <ul class="nav navbar-nav navbar-right">

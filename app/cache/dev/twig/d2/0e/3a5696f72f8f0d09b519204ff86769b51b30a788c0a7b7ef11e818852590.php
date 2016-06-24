@@ -52,6 +52,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
         // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/loginlogin/js/jquery-2.2.4.min.js"), "html", null, true);
         echo "\"></script>
+        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js\"></script>
         <script>
             var addedrows = new Array();
             \$(document).ready(function() {
@@ -97,24 +98,23 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
 
                     \$( this ).css( \"background-color\", \"#cacaca\" );
 
-                    \$('#destinationtable tr:last').after('<tr id=\"dest' + theid + '\"><td>'
+                    \$('#destinationtable tr:last').after('<tr class=\"shashi\" id=\"dest' + theid + '\"><td>'
                                                    + \$(this).find(\"td\").eq(0).html() + '</td><td>'
                                                    + \$(this).find(\"td\").eq(1).html() + '</td><td>'
-                                                   + \$(this).find(\"td\").eq(2).html() + '</td><td onclick=\"deleteRow(this)\" id=\"shashi\">'
+                                                   + \$(this).find(\"td\").eq(2).html() + '</td><td id=\"shashi\">'
                                                    + \"delete\" + '</td></tr>');         
                 }
 
-
+                \$(document).ready(function(){
+                  \$(\".shashi\").click(function(){
+                      \$(this).hide();
+                  });
+                });
                 });
             });
             
-        function deleteRow(row){
-            var i=row.parentNode.parentNode.rowIndex;
-            document.getElementById('dest').deleteRow(i);
-            alert(\"shashi\" + d);
-
-        }
             </script>
+
             <style type=\"text/css\">
               #shashi{
                 font-size: 20px;
@@ -415,7 +415,7 @@ class __TwigTemplate_d20e3a5696f72f8f0d09b519204ff86769b51b30a788c0a7b7ef11e8188
                     <li><a href=\"#\"> Upcomming </a></li>
                     <li><a href=\"";
         // line 106
-        echo $this->env->getExtension('routing')->getPath("login_login_main");
+        echo $this->env->getExtension('routing')->getPath("login_login_league");
         echo "\"> League </a></li>
                     <li><a href=\"#\"> Abount </a></li>
                 </ul>

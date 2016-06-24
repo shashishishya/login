@@ -21,3 +21,11 @@ login_login_main:
 login_login_score:
     path: /score
     defaults: { _controller: LoginLoginBundle:Scores:score }
+
+login_login_league:
+    path: /league
+    defaults: { _controller: LoginLoginBundle:League:league }
+
+login_login_serach:
+    path: /lea
+    defaults: { _controller: LoginLoginBundle:League:search }

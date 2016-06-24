@@ -160,6 +160,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Login\\LoginBundle\\Controller\\ScoresController::scoreAction',  '_route' => 'login_login_score',);
         }
 
+        if (0 === strpos($pathinfo, '/lea')) {
+            // login_login_league
+            if ($pathinfo === '/league') {
+                return array (  '_controller' => 'Login\\LoginBundle\\Controller\\LeagueController::leagueAction',  '_route' => 'login_login_league',);
+            }
+
+            // login_login_serach
+            if ($pathinfo === '/lea') {
+                return array (  '_controller' => 'Login\\LoginBundle\\Controller\\LeagueController::searchAction',  '_route' => 'login_login_serach',);
+            }
+
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
